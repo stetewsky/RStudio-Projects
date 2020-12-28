@@ -97,8 +97,8 @@ swirl()
 #  - Matrices can also be created directly from vectors by adding a dimension attribute.
 #       m <- 1:10   dim(m) <- c(2, 5)  
 #     or by column bind or row bind:  x <- 1:3  y <- 10:12  cbind(x, y)  rbind(x,y)
-
-
+#
+# Adding additional changes 
 #-------------------------------------------------------------------
 # You can exit swirl and return to the R prompt (>) at any time by pressing the Esc
 # | key. If you are already at the prompt, type bye() to exit and save your progress.
