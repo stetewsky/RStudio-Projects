@@ -85,6 +85,19 @@ swirl()
 #      in the current working directory called "testdir2" and a subdirectory for it called "testdir3"
 #  - setwd(old.dir) - it is often helpful to save the settings that you had before you began an analysis and then go back to
 #     them at the end.
+# R syntaX
+#  - A vector can only contain objects of the same class, provided it's not a list represented as a vector
+#       y <- c(1.7, "a")   1.7 is implicitly coerced into a string "1.7"
+#       explicit conversion is done like this:  as.integer(x), as.character(x), as.logical(x),
+#  - If you explicitly want an integer, you need to specify the L suffix
+#  - There is a special number -- inf, such that 1/Inf = 0.  Also NaN is "not a number" e.g.0/0
+#  - You can also use the vector function to initialize : x <- vector("numeric", length = 10)  has 10 0s
+#  - Matrices are vectors with a dimension attribute. The dimension attribute is itself an integer vector of length 2 (number of rows, number of columns)
+#     m <- matrix(nrow = 2, ncol = 3)   dim(m) = 2 3  and they are constructed column-wise
+#  - Matrices can also be created directly from vectors by adding a dimension attribute.
+#       m <- 1:10   dim(m) <- c(2, 5)  
+#     or by column bind or row bind:  x <- 1:3  y <- 10:12  cbind(x, y)  rbind(x,y)
+
 
 #-------------------------------------------------------------------
 # You can exit swirl and return to the R prompt (>) at any time by pressing the Esc
