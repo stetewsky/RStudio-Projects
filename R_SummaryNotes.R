@@ -1,8 +1,6 @@
 install.packages("swirl")
 packageVersion("swirl")
 
-# https://www.youtube.com/watch?v=7JGnnpIC29c&feature=youtu.be1
-
 library("swirl")
 install_course("The R Programming Environment")
 swirl()
@@ -97,7 +95,36 @@ swirl()
 #  - Matrices can also be created directly from vectors by adding a dimension attribute.
 #       m <- 1:10   dim(m) <- c(2, 5)  
 #     or by column bind or row bind:  x <- 1:3  y <- 10:12  cbind(x, y)  rbind(x,y)
+#  - Lists are a special type of vector that can contain elements of different classes
+#     x <- list(1, "a", TRUE, 1 + 4i)  or x <- vector("list", length = 5)
+#  - Factors are used to represent categorical data and can be unordered or ordered. 
+#     x <- factor(c("yes", "yes", "no", "yes", "no"))  by default levels are alphabetic no, yes
+#     x <- factor(c("yes", "yes", "no", "yes", "no"),
+#        levels = c("yes", "no"))
+#  - Missing values are denoted by NA or NaN for undefined mathematical operations
+#     test for them using is.na() and is.nan()  A NaN value is also NA but the converse is not true
+#  - Data frames are used to store tabular data and are a special type of list
+#      Each element of the list can be thought of as a column and the length of each element of the list is the number of rows.
+#      Unlike matrices, data frames can store different classes of objects in each column.
+#      Data frames are usually created by reading in a dataset using the read.table() or read.csv().
+#      But, they can also be created explicitly with the data.frame() 
+#           x <- data.frame(foo = 1:4, bar = c(T, T, F, F))     nrow(x)->4  ncol(x)->2  
+#  - R objects can have names. an example of assigning names to an integer vector
+#      x <- 1:3   then names(x) -> NULL
+#      names(x) <- c("New York", "Seattle", "Los Angeles")
+#      x  ->
+#             New York     Seattle Los Angeles 
+#                1           2           3 
+#      lists can also have names    x <- list("Los Angeles" = 1, Boston = 2, London = 3) 
+#      Matrices can have both column and row names  m <- matrix(1:4, nrow = 2, ncol = 2)
+#                                                   dimnames(m) <- list(c("a", "b"), c("c", "d")) 
+#      or, set them separately using  colnames(m) <- c("h", "f")   and  rownames(m) <- c("x", "z")
+#   - R objects can have attributes, which are like metadata for the object
+#        and can be accessed using the attribute() function
 #
+# The purpose of defining tidy data is to highlight the fact that most data do not start out life as tidy. 
+
+
 # Adding additional changes 
 #-------------------------------------------------------------------
 # You can exit swirl and return to the R prompt (>) at any time by pressing the Esc
